@@ -1,0 +1,11 @@
+import random
+import time
+def generate_matrix(rows, cols, min_val, max_val):
+    matrix = []
+    for _ in range(rows):
+        row = [random.randint(min_val, max_val) for _ in range(cols)]
+        matrix.append(row)    
+    return matrix
+
+my_matrix = generate_matrix(3, 3, 0, 100)
+print(my_matrix)

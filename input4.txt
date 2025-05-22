@@ -1,0 +1,20 @@
+from collections import deque
+
+with open('input.txt', 'r', encoding='utf-8') as file:
+    a = file.readlines()
+
+left = deque()
+right = deque()
+
+for i in a:
+    left.append(i.strip())
+
+while left: 
+    new = min(left)
+    left.remove(new)
+    right.append(new)
+    print(new) 
+
+with open('output.txt', 'w') as file:
+    for j in right:
+        file.write(j + '\n')
